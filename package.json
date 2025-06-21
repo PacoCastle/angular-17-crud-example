@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "angular-17-crud-example",
+=======
+  "name": "angular-17-crud",
+>>>>>>> a9372e2afaabb38f82c41317956975c3a1749047
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,9 +25,13 @@
     "bootstrap": "^4.6.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+<<<<<<< HEAD
     "zone.js": "~0.14.2",
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1"
+=======
+    "zone.js": "~0.14.2"
+>>>>>>> a9372e2afaabb38f82c41317956975c3a1749047
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.7",
