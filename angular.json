@@ -3,11 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
     "angular-17-crud-example": {
-=======
-    "angular-17-crud": {
->>>>>>> a9372e2afaabb38f82c41317956975c3a1749047
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,17 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-<<<<<<< HEAD
               "buildTarget": "angular-17-crud-example:build:production"
             },
             "development": {
               "buildTarget": "angular-17-crud-example:build:development"
-=======
-              "buildTarget": "angular-17-crud:build:production"
-            },
-            "development": {
-              "buildTarget": "angular-17-crud:build:development"
->>>>>>> a9372e2afaabb38f82c41317956975c3a1749047
             }
           },
           "defaultConfiguration": "development"
@@ -94,11 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-<<<<<<< HEAD
             "buildTarget": "angular-17-crud-example:build"
-=======
-            "buildTarget": "angular-17-crud:build"
->>>>>>> a9372e2afaabb38f82c41317956975c3a1749047
           }
         },
         "test": {
