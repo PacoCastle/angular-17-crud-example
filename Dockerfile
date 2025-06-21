@@ -3,10 +3,10 @@
 FROM node:20 AS build
 # Set the working directory inside the container
 WORKDIR /app
-# Copy package.json and package-lock.json for dependency installation
+# Copy only package.json and package-lock.json first for dependency install
 COPY package*.json ./
-# Install dependencies
-RUN npm install -g npm@latest && npm install && npm audit fix --force || true
+# Install dependencies with legacy peer deps for compatibility
+RUN npm install --legacy-peer-deps
 # Copy the rest of the application code
 COPY . .
 # Build the Angular app for production and list the build output for debugging
