@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: java17_mongo_db
+    volumes:
+      - mongo_data:/data/db
+
+  springboot:
+    build: ../../Java/spring-boot-data-mongodb
+    container_name: springboot
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://admin:admin@mongodb:27017/java17_mongo_db?authSource=admin
+    depends_on:
+      - mongodb
+
+  angular:
+    build: ../../Angular/angular-17-crud-example
+    container_name: angular
+    ports:
+      - "8081:80"
+    depends_on:
+      - springboot
+
+volumes:
+  mongo_data:
