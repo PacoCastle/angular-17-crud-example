@@ -23,5 +23,5 @@ COPY --from=build /app/dist/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Expose port 80 for the web server
 EXPOSE 80
-# Start Nginx in the foreground
+# Start Nginx in the foregrounddd
 CMD ["nginx", "-g", "daemon off;"]
