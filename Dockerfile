@@ -11,6 +11,8 @@ RUN npm install --legacy-peer-deps
 COPY . .
 # Build the Angular app for production and list the build output for debugging
 RUN npm run build --configuration=production && ls -l dist || (echo 'BUILD FAILED' && ls -l dist && cat /app/angular.json && exit 1)
+# Add Netlify _redirects file for SPA routing
+RUN echo '/*    /index.html   200' > /app/dist/browser/_redirects
 
 # Stage 2: Serve with Nginx
 # Use the official Nginx image to serve the built Angular app
