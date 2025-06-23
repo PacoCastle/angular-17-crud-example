@@ -10,7 +10,7 @@ RUN npm install --legacy-peer-deps
 # Copy the rest of the application code
 COPY . .
 # Build the Angular app for production and list the build output for debugging
-RUN npm run build -- --configuration=production && ls -l dist || (echo 'BUILD FAILED' && ls -l dist && cat /app/angular.json && exit 1)
+RUN npm run build --configuration=production && ls -l dist || (echo 'BUILD FAILED' && ls -l dist && cat /app/angular.json && exit 1)
 
 # Stage 2: Serve with Nginx
 # Use the official Nginx image to serve the built Angular app
